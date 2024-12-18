@@ -83,6 +83,17 @@ class CalculatorApp(ft.Container):
                         ft.Button(text="x²", on_click=self.button_clicked, data="square"),
                         ft.Button(text="√", on_click=self.button_clicked, data="sqrt"),
                         ft.Button(text="1/x", on_click=self.button_clicked, data="inverse"),
+<<<<<<< Updated upstream
+=======
+                        ft.Button(text="π", on_click=self.button_clicked, data="pi"),
+                    ]
+                ),
+                ft.Row(
+                    expand=True,
+                    controls=[
+                        ft.Button(text="x³", on_click=self.button_clicked, data="cube"),
+                        ft.Button(text="ln", on_click=self.button_clicked, data="ln"),
+>>>>>>> Stashed changes
                     ]
                 )
             ]
@@ -126,8 +137,20 @@ class CalculatorApp(ft.Container):
                 self.result.value = str(math.log10(float(self.result.value)))
             else:
                 self.result.value = "Error"
+<<<<<<< Updated upstream
         elif action == "square":
             self.result.value = str(float(self.result.value) ** 2)
+=======
+        elif action == "ln":
+            if float(self.result.value) > 0:
+                self.result.value = str(math.log(float(self.result.value)))
+            else:
+                self.result.value = "Error"
+        elif action == "square":
+            self.result.value = str(float(self.result.value) ** 2)
+        elif action == "cube":
+            self.result.value = str(float(self.result.value) ** 3)
+>>>>>>> Stashed changes
         elif action == "sqrt":
             if float(self.result.value) >= 0:
                 self.result.value = str(math.sqrt(float(self.result.value)))
@@ -138,6 +161,11 @@ class CalculatorApp(ft.Container):
                 self.result.value = str(1 / float(self.result.value))
             else:
                 self.result.value = "Error"
+<<<<<<< Updated upstream
+=======
+        elif action == "pi":
+            self.result.value = str(math.pi)
+>>>>>>> Stashed changes
         
         self.update()
 
@@ -167,7 +195,11 @@ def main(page: ft.Page):
     page.title = "科學計算器"
     page.bgcolor = "#6C6C6C"
     page.window_width = 400
+<<<<<<< Updated upstream
     page.window_height = 600
+=======
+    page.window_height = 650
+>>>>>>> Stashed changes
     calc = CalculatorApp()
     page.add(calc)
 
